@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SeventhQuestion extends AppCompatActivity {
     private int score=0;
-    private int c=0;
 
 
     @Override
@@ -28,40 +27,13 @@ public class SeventhQuestion extends AppCompatActivity {
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         RadioGroup radioGroup = findViewById(R.id.radioGroup7);
-
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId) {
-                    case -1:
-                        Toast.makeText(getApplicationContext(), "Ничего не выбрано",
-                                Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.answ71:
-                        c+=0;
-                        break;
-                    case R.id.answ72:
-                        c+=0;
-                        break;
-                    case R.id.answ73:
-                        c+=0;
-                        break;
-                    case R.id.answ74:
-                        c+=100;
-                        break;
-                    default:
-                        break;
-                }
-            }
-        });
-        Button buttonNext=(Button)findViewById(R.id.buttonNext);
+        Button buttonNext = (Button)findViewById(R.id.buttonNext);
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    if(c==1){
-                        score+=100;
+                    if (radioGroup.getCheckedRadioButtonId() == R.id.answ74){
+                        score +=100;
                     }
                     Intent intent= new Intent(SeventhQuestion.this, EightQuestion.class);
                     intent.putExtra("score", score);

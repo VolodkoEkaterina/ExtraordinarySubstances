@@ -18,22 +18,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         Window w = getWindow();
-        w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        Button buttonStart=(Button)findViewById(R.id.buttonStart);
+        Button buttonStart = (Button) findViewById(R.id.buttonStart);
         buttonStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                  Intent intent= new Intent(MainActivity.this,FirstQuestion.class);
-                  startActivity(intent);finish();
-
-                }catch (Exception e){
-                    Toast.makeText(getApplicationContext(),"Произошла непредвиденная ошибка", Toast.LENGTH_SHORT).show();
-                }
+                Intent intent = new Intent(MainActivity.this, FirstQuestion.class);
+                startActivity(intent);
             }
         });
-
-
     }
 }

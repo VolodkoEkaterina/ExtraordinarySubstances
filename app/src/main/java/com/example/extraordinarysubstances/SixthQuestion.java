@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class SixthQuestion extends AppCompatActivity {
     private int score=0;
-    private int c=0;
 
 
     @Override
@@ -28,40 +27,13 @@ public class SixthQuestion extends AppCompatActivity {
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         RadioGroup radioGroup = findViewById(R.id.radioGroup6);
-
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId) {
-                    case -1:
-                        Toast.makeText(getApplicationContext(), "Ничего не выбрано",
-                                Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.answ61:
-                        c=0;
-                        break;
-                    case R.id.answ62:
-                        c=0;
-                        break;
-                    case R.id.answ63:
-                        c=1;
-                        break;
-                    case R.id.answ64:
-                        c=0;
-                        break;
-                    default:
-                        break;
-                }
-            }
-        });
-        Button buttonNext=(Button)findViewById(R.id.buttonNext);
+        Button buttonNext = (Button)findViewById(R.id.buttonNext);
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    if(c==1){
-                        score+=100;
+                    if (radioGroup.getCheckedRadioButtonId() == R.id.answ63){
+                        score +=100;
                     }
                     Intent intent= new Intent(SixthQuestion.this, SeventhQuestion.class);
                     intent.putExtra("score", score);

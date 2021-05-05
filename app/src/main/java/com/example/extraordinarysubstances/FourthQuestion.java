@@ -28,45 +28,17 @@ public class FourthQuestion extends AppCompatActivity {
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
         RadioGroup radioGroup = findViewById(R.id.radioGroup4);
-
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                switch (checkedId) {
-                    case -1:
-                        Toast.makeText(getApplicationContext(), "Ничего не выбрано",
-                                Toast.LENGTH_SHORT).show();
-                        break;
-                    case R.id.answ41:
-                        c=0;
-                        break;
-                    case R.id.answ42:
-                        c=1;
-                        break;
-                    case R.id.answ43:
-                        c=0;
-                        break;
-                    case R.id.answ44:
-                        c=0;
-                        break;
-                    default:
-                        break;
-                }
-            }
-        });
-        Button buttonNext=(Button)findViewById(R.id.buttonNext);
+        Button buttonNext = (Button)findViewById(R.id.buttonNext);
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    if(c==1){
-                        score+=100;
+                    if (radioGroup.getCheckedRadioButtonId() == R.id.answ42){
+                        score +=100;
                     }
+                    Intent intent= new Intent(FourthQuestion.this, FifthQuestion.class);
                     intent.putExtra("score", score);
-                    Intent intent= new Intent(FourthQuestion.this,FifthQuestion.class);
                     startActivity(intent);
-                    finish();
                 }catch (Exception e){
                     Toast.makeText(getApplicationContext(),"Произошла непредвиденная ошибка", Toast.LENGTH_SHORT).show();
                 }

@@ -20,7 +20,16 @@ public class LastActivity extends AppCompatActivity {
         txtscore = (TextView)findViewById(R.id.txtscore);
         Intent intent = getIntent();
         int score = intent.getIntExtra("score",60000);
-        txtscore.setText("Ваш результат:" +  score);
+        if (score<400){
+            txtscore.setText("Ваш результат: " +  score + " из 1000 " + "\n Вам стоит подучить химию");
 
+        }
+        if (score>390 && score<800){
+            txtscore.setText("Ваш результат: " +  score + " из 1000 " + "\n Неплохо, вы почти знаток химии.");
+
+        }
+        if (score>790){
+            txtscore.setText("Ваш результат: " +  score + " из 1000 " + "\n Молодцы, Вы химический гений.");
+        }
     }
 }
