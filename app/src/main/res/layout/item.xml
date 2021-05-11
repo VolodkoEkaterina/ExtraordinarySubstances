@@ -12,70 +12,50 @@
         android:background="#FFFFFF"
         android:scaleType="centerCrop"
         android:src="@drawable/main_background" />
-
-
-    <TextView
-        android:id="@+id/questionText1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/qw9"
-        android:textColor="@color/white"
-        android:textSize="18dp"
-        android:padding = "10dp"
-        android:gravity="center"
-        android:layout_below="@+id/image9"/>
-
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/title"
         android:textColor="@color/white"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold"
         android:gravity="center" />
-
-
     <LinearLayout
         android:id="@+id/container3"
         android:layout_width="wrap_content"
-        android:layout_height="70dp"
+        android:layout_height="70sp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:padding="10sp">
 
         <Button
             android:id="@+id/buttonNext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
+            android:paddingLeft="5sp"
+            android:paddingRight="5sp"
             android:text="@string/next"
             android:textAllCaps="false"
             android:onClick="onClick"
             android:textSize="24sp" />
     </LinearLayout>
-
-
     <ImageView
-        android:id="@+id/image9"
+        android:id="@+id/Image"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/image9"
-        android:layout_width="338dp"
-        android:layout_height="278dp"
+        android:layout_width="338sp"
+        android:layout_height="278sp"
         android:layout_below="@id/title"/>
-
-
     <LinearLayout
         android:id="@+id/container7"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="450dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="380dp">
+        android:layout_marginStart="40sp"
+        android:layout_marginTop="500sp"
+        android:layout_marginEnd="40sp"
+        android:layout_marginBottom="370sp">
 
         <TextView
             android:id="@+id/answer"
@@ -83,14 +63,21 @@
             android:layout_height="wrap_content"
             android:text="@string/answ8"
             android:textColor="@color/white"
-            android:textSize="20dp" />
+            android:textSize="20sp" />
         <EditText
-            android:id="@+id/answ91"
+            android:id="@+id/answ"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/white"
             android:backgroundTint="@color/teal_200"
-            app:layout_constraintTop_toBottomOf="@+id/answ91" />
+            app:layout_constraintTop_toBottomOf="@+id/answ"/>
     </LinearLayout>
-
+    <TextView
+        android:id="@+id/questionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:gravity="center"
+        android:layout_below="@id/Image"/>
 </RelativeLayout>

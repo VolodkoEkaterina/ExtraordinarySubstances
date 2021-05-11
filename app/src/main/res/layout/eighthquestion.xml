@@ -13,18 +13,15 @@
         android:scaleType="centerCrop"
         android:src="@drawable/main_background" />
 
-
     <TextView
         android:id="@+id/questionText8"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/qw8"
-        android:gravity="center"
         android:textColor="@color/white"
         android:textSize="18dp"
-        android:padding="10dp"
-        android:layout_below="@+id/image8"/>
-
+        android:gravity="center"
+        android:layout_below="@id/image8"/>
 
     <TextView
         android:id="@+id/title"
@@ -35,55 +32,6 @@
         android:textSize="30dp"
         android:textStyle="bold"
         android:gravity="center" />
-
-
-    <RadioGroup
-        android:id="@+id/radioGroup8"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_below="@id/questionText8"
-        android:layout_above="@id/container3">
-        <RadioButton
-            android:id="@+id/answ81"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:text="@string/answ81"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:layout_weight="1" />
-
-        <RadioButton
-            android:id="@+id/answ82"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:text="@string/answ82"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:layout_weight="1" />
-
-        <RadioButton
-            android:id="@+id/answ83"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:text="@string/answ83"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:layout_weight="1" />
-
-        <RadioButton
-            android:id="@+id/answ84"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="24dp"
-            android:text="@string/answ84"
-            android:textColor="@color/white"
-            android:textSize="20dp"
-            android:layout_weight="1" />
-    </RadioGroup>
 
 
     <LinearLayout
@@ -107,8 +55,6 @@
             android:textSize="24sp" />
     </LinearLayout>
 
-
-
     <ImageView
         android:id="@+id/image8"
         android:layout_centerHorizontal="true"
@@ -117,5 +63,31 @@
         android:layout_height="278dp"
         android:layout_below="@id/title"/>
 
+
+    <LinearLayout
+        android:id="@+id/container7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="500dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginBottom="370dp">
+
+        <TextView
+            android:id="@+id/answer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/answ8"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+        <EditText
+            android:id="@+id/answ81"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:backgroundTint="@color/teal_200"
+            app:layout_constraintTop_toBottomOf="@+id/answ81"/>
+    </LinearLayout>
 
 </RelativeLayout>

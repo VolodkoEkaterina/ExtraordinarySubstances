@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.EditText;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,26 +14,27 @@ import androidx.appcompat.app.AppCompatActivity;
 public class ThirdQuestion extends AppCompatActivity {
     private int score=0;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
         score = intent.getIntExtra("score", score);
+
         setContentView(R.layout.thirdquestion);
 
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        Button buttonNext=(Button)findViewById(R.id.buttonNext);
+        RadioGroup radioGroup = findViewById(R.id.radioGroup3);
+        Button buttonNext = (Button)findViewById(R.id.buttonNext);
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText answerText = findViewById(R.id.answ31);
-                String answer = answerText.getText().toString();
-                if (answer.equals("пироксилин")){
-                    score+=100;
-                }
                 try {
+                    if (radioGroup.getCheckedRadioButtonId() == R.id.answ32){
+                        score +=100;
+                    }
                     Intent intent= new Intent(ThirdQuestion.this, FourthQuestion.class);
                     intent.putExtra("score", score);
                     startActivity(intent);

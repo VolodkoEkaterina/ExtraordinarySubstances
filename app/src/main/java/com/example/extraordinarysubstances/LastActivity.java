@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -16,6 +17,8 @@ public class LastActivity extends AppCompatActivity {
         setContentView(R.layout.activity_last);
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        Toast.makeText(LastActivity.this, "Вы наш новый победитель! Так держать!",Toast.LENGTH_SHORT).show();
 
         txtscore = (TextView)findViewById(R.id.txtscore);
         Intent intent = getIntent();

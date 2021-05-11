@@ -6,7 +6,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
-import android.widget.RadioGroup;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,26 +14,24 @@ import androidx.appcompat.app.AppCompatActivity;
 public class TenthQuestion extends AppCompatActivity {
     private int score=0;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
         score = intent.getIntExtra("score", score);
-
         setContentView(R.layout.tenthquestion);
 
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
-        RadioGroup radioGroup = findViewById(R.id.radioGroup10);
-        Button buttonNext = (Button)findViewById(R.id.buttonNext);
+        Button buttonNext=(Button)findViewById(R.id.buttonNext);
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    if (radioGroup.getCheckedRadioButtonId() == R.id.answ101){
-                        score +=100;
+                    EditText answerText = findViewById(R.id.answ101);
+                    String answer = answerText.getText().toString();
+                    if (answer.equals("бензойная кислота")){
+                        score+=100;
                     }
                     Intent intent= new Intent(TenthQuestion.this, LastActivity.class);
                     intent.putExtra("score", score);

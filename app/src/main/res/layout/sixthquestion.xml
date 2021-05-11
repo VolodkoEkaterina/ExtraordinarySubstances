@@ -25,6 +25,7 @@
         android:padding="10dp"
         android:layout_below="@+id/image6"/>
 
+
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
@@ -36,13 +37,13 @@
         android:gravity="center" />
 
 
-        <RadioGroup
-            android:id="@+id/radioGroup6"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_below="@id/questionText6"
-            android:layout_above="@id/container3">
+    <RadioGroup
+        android:id="@+id/radioGroup6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/questionText6"
+        android:layout_above="@id/container3">
         <RadioButton
             android:id="@+id/answ61"
             android:layout_width="match_parent"
@@ -82,7 +83,7 @@
             android:textColor="@color/white"
             android:textSize="20dp"
             android:layout_weight="1" />
-        </RadioGroup>
+    </RadioGroup>
 
 
     <LinearLayout
@@ -107,6 +108,7 @@
     </LinearLayout>
 
 
+
     <ImageView
         android:id="@+id/image6"
         android:layout_centerHorizontal="true"
@@ -114,5 +116,6 @@
         android:layout_width="338dp"
         android:layout_height="278dp"
         android:layout_below="@id/title"/>
+
 
 </RelativeLayout>

@@ -32,10 +32,10 @@ public class SeventhQuestion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    if (radioGroup.getCheckedRadioButtonId() == R.id.answ74){
+                    if (radioGroup.getCheckedRadioButtonId() == R.id.answ71){
                         score +=100;
                     }
-                    Intent intent= new Intent(SeventhQuestion.this, EightQuestion.class);
+                    Intent intent= new Intent(SeventhQuestion.this, IntermediateResultActivity.class);
                     intent.putExtra("score", score);
                     startActivity(intent);
                 }catch (Exception e){

@@ -12,85 +12,91 @@
         android:background="#FFFFFF"
         android:scaleType="centerCrop"
         android:src="@drawable/main_background" />
-
-
-    <TextView
-        android:id="@+id/questionText1"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/qw9"
-        android:textColor="@color/white"
-        android:textSize="18dp"
-        android:padding = "10dp"
-        android:gravity="center"
-        android:layout_below="@+id/image9"/>
-
     <TextView
         android:id="@+id/title"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/title"
         android:textColor="@color/white"
-        android:textSize="30dp"
+        android:textSize="30sp"
         android:textStyle="bold"
         android:gravity="center" />
-
-
     <LinearLayout
         android:id="@+id/container3"
         android:layout_width="wrap_content"
-        android:layout_height="70dp"
+        android:layout_height="70sp"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:orientation="horizontal"
-        android:padding="10dp">
+        android:padding="10sp">
 
         <Button
             android:id="@+id/buttonNext"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
+            android:paddingLeft="5sp"
+            android:paddingRight="5sp"
             android:text="@string/next"
             android:textAllCaps="false"
             android:onClick="onClick"
             android:textSize="24sp" />
     </LinearLayout>
-
-
     <ImageView
-        android:id="@+id/image9"
+        android:id="@+id/Image"
         android:layout_centerHorizontal="true"
-        android:src="@drawable/image9"
-        android:layout_width="338dp"
-        android:layout_height="278dp"
+        android:layout_width="338sp"
+        android:layout_height="278sp"
         android:layout_below="@id/title"/>
-
-
-    <LinearLayout
-        android:id="@+id/container7"
+    <RadioGroup
+        android:id="@+id/radioGroup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginStart="40dp"
-        android:layout_marginTop="450dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginBottom="380dp">
-
-        <TextView
-            android:id="@+id/answer"
+        android:layout_below="@id/questionText"
+        android:layout_above="@id/container3">
+        <RadioButton
+            android:id="@+id/answ1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/answ8"
+            android:layout_marginLeft="24sp"
             android:textColor="@color/white"
-            android:textSize="20dp" />
-        <EditText
-            android:id="@+id/answ91"
+            android:textSize="20sp"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/answ2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginLeft="24sp"
             android:textColor="@color/white"
-            android:backgroundTint="@color/teal_200"
-            app:layout_constraintTop_toBottomOf="@+id/answ91" />
-    </LinearLayout>
+            android:textSize="20sp"
+            android:layout_weight="1" />
 
+        <RadioButton
+            android:id="@+id/answ3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24sp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_weight="1" />
+
+        <RadioButton
+            android:id="@+id/answ4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="24sp"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:layout_weight="1" />
+    </RadioGroup>
+    <TextView
+        android:id="@+id/questionText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:padding="10sp"
+        android:layout_below="@+id/Image"/>
 </RelativeLayout>

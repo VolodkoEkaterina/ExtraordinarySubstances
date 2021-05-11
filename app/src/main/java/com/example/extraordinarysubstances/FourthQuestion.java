@@ -13,7 +13,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class FourthQuestion extends AppCompatActivity {
     private int score=0;
-    private int c=0;
 
 
     @Override
@@ -33,7 +32,7 @@ public class FourthQuestion extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    if (radioGroup.getCheckedRadioButtonId() == R.id.answ42){
+                    if (radioGroup.getCheckedRadioButtonId() == R.id.answ43){
                         score +=100;
                     }
                     Intent intent= new Intent(FourthQuestion.this, FifthQuestion.class);
