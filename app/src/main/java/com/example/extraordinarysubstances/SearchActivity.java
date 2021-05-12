@@ -32,14 +32,14 @@ public class SearchActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //setContentView(R.layout.fragment_search);
+        setContentView(R.layout.activity_search);
 
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        //search_btn = findViewById(R.id.search_btn);
-       // search_field = findViewById(R.id.search_field);
-        //result_info = findViewById(R.id.result_info);
+        search_btn = findViewById(R.id.search_btn);
+        search_field = findViewById(R.id.search_field);
+        result_info = findViewById(R.id.result_info);
 
         search_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,7 +48,10 @@ public class SearchActivity extends AppCompatActivity {
                     Toast.makeText(SearchActivity.this, R.string.hint_search,Toast.LENGTH_SHORT).show();
                 else{
                     String substance = search_field.getText().toString();
-                    String key = "";//вставить api ключ
+                    // для того чтобы параметры выводились на русском в конец ссылки добавить &lang=ru
+                    //https://vx-e-additives.p.rapidapi.com/additives/951?locale=en
+                    //x-rapidapi-key: e65a3eb024msh66b5bcd1601b88dp1a7491jsncc25590baa82
+                    //x-rapidapi-host: vx-e-additives.p.rapidapi.com
                     String url="";
 
                     new GetData().execute(url);
@@ -110,7 +113,12 @@ public class SearchActivity extends AppCompatActivity {
 
             try {
                 JSONObject obj = new JSONObject(result);
-                //result_info.setText("Химическая формула: " + obj.getJSONObject("")."");
+                result_info.setText("Название: " + obj.getJSONObject("properties").getString("name"));
+                result_info.setText("Функция добавки: " + obj.getJSONObject("properties").getString("function"));
+                result_info.setText("Продукты питания, в которых добавка используется: " + obj.getJSONObject("properties").getString("foods"));
+                result_info.setText("Побочные эффекты: " + obj.getJSONObject("properties").getString("notice"));
+                result_info.setText("Доп. информация: " + obj.getJSONObject("properties").getString("info"));
+
             } catch (JSONException e) {
                 e.printStackTrace();
             }

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background=""
+    tools:context=".SearchActivity">
+    <ImageView
+        android:id="@+id/main_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:scaleType="centerCrop"
+        android:src="@drawable/main_background" />
+
+    <TextView
+        android:id="@+id/title_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_search"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="50sp"
+        android:textAlignment="center"/>
+
+    <EditText
+        android:id="@+id/search_field"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_below="@+id/title_search"
+        android:inputType="textPersonName"
+        android:layout_marginTop="100sp"
+        android:layout_marginHorizontal="50sp"
+        android:backgroundTint="@color/teal_200"
+        android:textColor="@color/white"
+        android:textColorHint="@color/hint"
+        android:hint="@string/hint_search" />
+    <Button
+        android:id="@+id/search_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/search_field"
+        android:layout_marginTop="20sp"
+        android:layout_marginHorizontal="130sp"
+        android:text="@string/search"/>
+    <TextView
+        android:id="@+id/result_info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:layout_below="@+id/search_btn"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="50sp"
+        android:textAlignment="center"/>
+
+</RelativeLayout>
