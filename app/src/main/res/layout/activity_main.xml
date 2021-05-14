@@ -1,10 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
-    <ListView
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        android:id="@+id/list" />
-</LinearLayout>
+    <ImageView
+        android:id="@+id/main_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:scaleType="centerCrop"
+        android:src="@drawable/main_background" />
+    <TextView
+        android:id="@+id/title_app"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/title_app"
+        android:textColor="@color/white"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginTop="170sp"
+        android:textAlignment="center"/>
+    <Button
+        android:id="@+id/go_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title_app"
+        android:layout_marginTop="20sp"
+        android:layout_marginHorizontal="100sp"
+        android:text="@string/go"/>
+    <Button
+        android:id="@+id/create_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/go_btn"
+        android:layout_marginTop="20sp"
+        android:layout_marginHorizontal="100sp"
+        android:text="@string/create"/>
+    <Button
+        android:id="@+id/edit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/create_btn"
+        android:layout_marginTop="20sp"
+        android:layout_marginHorizontal="100sp"
+        android:text="@string/edit"/>
+    <Button
+        android:id="@+id/exit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/edit_btn"
+        android:layout_marginTop="20sp"
+        android:layout_marginHorizontal="100sp"
+        android:text="@string/exit"/>
+
+
+</RelativeLayout>

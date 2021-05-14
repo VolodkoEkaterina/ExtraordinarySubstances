@@ -48,6 +48,7 @@ public class SearchActivity extends AppCompatActivity {
                     Toast.makeText(SearchActivity.this, R.string.hint_search,Toast.LENGTH_SHORT).show();
                 else{
                     String substance = search_field.getText().toString();
+
                     // для того чтобы параметры выводились на русском в конец ссылки добавить &lang=ru
                     //https://vx-e-additives.p.rapidapi.com/additives/951?locale=en
                     //x-rapidapi-key: e65a3eb024msh66b5bcd1601b88dp1a7491jsncc25590baa82
