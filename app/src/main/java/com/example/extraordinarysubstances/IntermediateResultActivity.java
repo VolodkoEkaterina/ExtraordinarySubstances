@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.extraordinarysubstances.questions.EighthQuestion;
+import com.example.extraordinarysubstances.EighthQuestion;
 
 public class IntermediateResultActivity extends AppCompatActivity {
     TextView txtinscore;

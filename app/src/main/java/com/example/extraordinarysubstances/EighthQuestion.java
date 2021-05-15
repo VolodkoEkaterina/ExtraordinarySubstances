@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class EightQuestion extends AppCompatActivity {
+public class EighthQuestion extends AppCompatActivity {
     private int score=0;
 
     @Override
@@ -35,7 +35,7 @@ public class EightQuestion extends AppCompatActivity {
                     score+=100;
                 }
                 try {
-                    Intent intent= new Intent(EightQuestion.this, NinthQuestion.class);
+                    Intent intent= new Intent(EighthQuestion.this, NinthQuestion.class);
                     intent.putExtra("score", score);
                     startActivity(intent);
                 }catch (Exception e){

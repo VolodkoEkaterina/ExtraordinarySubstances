@@ -43,7 +43,7 @@ public class Question extends AppCompatActivity implements Serializable {
     public String getQuestionText() {
         return questionText;
     }
-    public String getAnswer() {
+    public String [] getAnswer() {
         String[] answers = answer.split(" ");
         return answers;
     }
