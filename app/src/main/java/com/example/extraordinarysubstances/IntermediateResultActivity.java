@@ -10,6 +10,8 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.extraordinarysubstances.questions.EighthQuestion;
+
 public class IntermediateResultActivity extends AppCompatActivity {
     TextView txtinscore;
     @Override

@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.extraordinarysubstances.questions.FifthQuestion;
+
 public class FourthQuestion extends AppCompatActivity {
     private int score=0;
 

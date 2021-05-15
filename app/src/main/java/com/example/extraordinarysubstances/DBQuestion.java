@@ -101,7 +101,6 @@ public class DBQuestion {
         }
         return arr;
     }
-
     private class OpenHelper extends SQLiteOpenHelper {
 
         OpenHelper(Context context) {

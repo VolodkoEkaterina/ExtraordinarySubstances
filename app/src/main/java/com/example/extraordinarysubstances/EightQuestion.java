@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class EighthQuestion extends AppCompatActivity {
+public class EightQuestion extends AppCompatActivity {
     private int score=0;
 
     @Override
@@ -19,22 +19,23 @@ public class EighthQuestion extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         Intent intent = getIntent();
         score = intent.getIntExtra("score", score);
-        setContentView(R.layout.eighthquestion);
+        setContentView(R.layout.ninthquestion);
 
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
 
         Button buttonNext=(Button)findViewById(R.id.buttonNext);
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                EditText answerText = findViewById(R.id.answ81);
+                EditText answerText = findViewById(R.id.answ91);
                 String answer = answerText.getText().toString();
                 if (answer.equals("пироксилин")){
                     score+=100;
                 }
                 try {
-                    Intent intent= new Intent(EighthQuestion.this, NinthQuestion.class);
+                    Intent intent= new Intent(EightQuestion.this, NinthQuestion.class);
                     intent.putExtra("score", score);
                     startActivity(intent);
                 }catch (Exception e){
@@ -45,3 +46,4 @@ public class EighthQuestion extends AppCompatActivity {
     }
 
 }
+

@@ -12,8 +12,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class FifthQuestion extends AppCompatActivity {
-    private int score=0;
-
+    private int score;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,7 +20,7 @@ public class FifthQuestion extends AppCompatActivity {
         Intent intent = getIntent();
         score = intent.getIntExtra("score", score);
 
-        setContentView(R.layout.fifthquestion);
+        setContentView(R.layout.secondquestion);
 
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
@@ -44,5 +43,4 @@ public class FifthQuestion extends AppCompatActivity {
             }
         });
     }
-
 }

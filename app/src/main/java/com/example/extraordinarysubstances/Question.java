@@ -3,6 +3,7 @@ package com.example.extraordinarysubstances;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 
 public class Question extends AppCompatActivity implements Serializable {
     private long id;
@@ -12,7 +13,6 @@ public class Question extends AppCompatActivity implements Serializable {
     private String answerRight;
     private int type;
     private String testName;
-
 
     public Question(long id, String questionTitle, String questionText, String answer, String answerRight, int type, String testName) {
         this.id = id;
@@ -24,6 +24,16 @@ public class Question extends AppCompatActivity implements Serializable {
         this.testName = testName;
     }
 
+    public Question(String questionTitle, String questionText, String answer, String answerRight, int type, String testName) {
+        this.questionTitle = questionTitle;
+        this.questionText = questionText;
+        this.answer = answer;
+        this.answerRight = answerRight;
+        this.type = type;
+        this.testName = testName;
+    }
+
+
     public long getId() {
         return id;
     }
@@ -34,7 +44,8 @@ public class Question extends AppCompatActivity implements Serializable {
         return questionText;
     }
     public String getAnswer() {
-        return answer;
+        String[] answers = answer.split(" ");
+        return answers;
     }
 
     public String getAnswerRight() {
@@ -48,4 +59,5 @@ public class Question extends AppCompatActivity implements Serializable {
     public String getTestName() {
         return testName;
     }
+
 }

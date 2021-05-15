@@ -10,9 +10,12 @@ import android.widget.EditText;
 import android.widget.Spinner;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.collection.ArraySet;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+
+import java.util.ArrayList;
 
 public class CreateActivity extends AppCompatActivity {
     private Button btAdd,btEnd;
@@ -23,6 +26,7 @@ public class CreateActivity extends AppCompatActivity {
     private Spinner spinner;
     private String mychoose;
     private int type;
+    ArrayList<Question>arrayList= new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -72,18 +76,22 @@ public class CreateActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Question question=new Question(MyQuestionID,etQuestionText.getText().toString(),etAnswer.getText().toString(),etAnswerRight.getText().toString(), etQuestionTitle.getText().toString(), type, etTestName.getText().toString());
-                Intent intent=getIntent();
-                intent.putExtra("Question",question);
-                setResult(RESULT_OK,intent);
+                arrayList.add(question);
                 finish();
-                // как сделать несколько вопросов в массиве?
             }
         });
 
         btEnd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //как создать весь тест из нескольких вопросов?
+                for (int i=0; i<arrayList.size(); i++){
+                    Question questions = arrayList.get(i);
+                    Intent intent=getIntent();
+                    intent.putExtra("Question",questions);
+                    setResult(RESULT_OK,intent);
+                    finish();
+                }
+
             }
         });
 
