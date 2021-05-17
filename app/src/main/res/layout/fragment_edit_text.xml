@@ -12,32 +12,9 @@
         android:scaleType="centerCrop"
         android:src="@drawable/main_background" />
 
-    <LinearLayout
-        android:id="@+id/buttons"
-        android:orientation="horizontal"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="650sp">
-        <Button
-            android:id="@+id/butAdd"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginHorizontal="25sp"
-            android:text="@string/buttonAdd" />
-
-        <Button
-            android:id="@+id/butEnd"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:layout_marginHorizontal="25sp"
-            android:text="@string/buttonEnd"
-            />
-    </LinearLayout>
     <ScrollView
         android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
+        android:layout_height="wrap_content"
         android:fillViewport="true">
         <LinearLayout
             android:layout_width="fill_parent"
@@ -68,6 +45,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="text"
                         android:textSize="15sp"
+                        android:textColor="@color/white"
                         android:backgroundTint="@color/teal_200"/>
                     <requestFocus />
                 </LinearLayout>
@@ -97,6 +75,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="text"
                         android:textSize="15sp"
+                        android:textColor="@color/white"
                         android:backgroundTint="@color/teal_200"/>
                     <requestFocus />
                 </LinearLayout>
@@ -127,6 +106,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="text"
                         android:textSize="15sp"
+                        android:textColor="@color/white"
                         android:backgroundTint="@color/teal_200"/>
                     <requestFocus />
                 </LinearLayout>
@@ -156,6 +136,7 @@
                         android:layout_height="wrap_content"
                         android:inputType="text"
                         android:textSize="15sp"
+                        android:textColor="@color/white"
                         android:backgroundTint="@color/teal_200"/>
                     <requestFocus />
                 </LinearLayout>

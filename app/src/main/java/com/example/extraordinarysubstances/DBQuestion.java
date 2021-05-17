@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class DBQuestion {
     private static final String DATABASE_NAME = "simple.db";
-    private static final int DATABASE_VERSION = 2;
+    private static final int DATABASE_VERSION = 3;
     private static final String TABLE_NAME = "tableQuestions";
 
     private static final String COLUMN_ID = "id";
@@ -37,7 +37,7 @@ public class DBQuestion {
         mDataBase = mOpenHelper.getWritableDatabase();
     }
 
-    public long insert(String questionTitle, String questionText,String answer,String answerRight, int type, String testName) {
+    public long insert(String questionTitle, String questionText, String answer, String answerRight, int type, String testName) {
         ContentValues cv=new ContentValues();
         cv.put(COLUMN_QUESTIONTITLE, questionTitle);
         cv.put(COLUMN_QUESTIONTEXT, questionText);
@@ -80,6 +80,20 @@ public class DBQuestion {
         String TestName = mCursor.getString(NUM_COLUMN_TESTNAME);
 
         return new Question(id, QuestionTitle, QuestionText, Answer, AnswerRight, Type, TestName);
+    }
+    public ArrayList<Question> selectTest(String testName) {
+        Cursor mCursor = mDataBase.query(TABLE_NAME, null, COLUMN_TESTNAME + " = ?", new String[]{String.valueOf(testName)}, null, null, null);
+        ArrayList<Question> questions = new ArrayList<>();
+        mCursor.moveToFirst();
+        do { String QuestionTitle = mCursor.getString(NUM_COLUMN_QUESTIONTITLE); String QuestionText = mCursor.getString(NUM_COLUMN_QUESTIONTEXT);
+        String Answer = mCursor.getString(NUM_COLUMN_ANSWER);
+        String AnswerRight = mCursor.getString(NUM_COLUMN_ANSWERRIGHT);
+        int Type = mCursor.getInt(NUM_COLUMN_TYPE);
+        String TestName = mCursor.getString(NUM_COLUMN_TESTNAME);
+        questions.add(new Question(QuestionTitle, QuestionText, Answer, AnswerRight, Type, TestName));
+        }while (mCursor.moveToNext());
+
+        return questions;
     }
 
     public ArrayList<Question> selectAll() {
