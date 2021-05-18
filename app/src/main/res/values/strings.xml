@@ -1,66 +1,9 @@
 <resources>
     <string name="app_name">ExtraordinarySubstances</string>
-
-    <string name="heading">Фактор вещества</string>
     <string name="next">Далее</string>
-    <string name="title">Угадайте загаданное вещество</string>
-    <string name="qw1">Древние египтяне заворачивали мумий в ткани, покрашенные этим красителем</string>
-    <string name="answ11">дихромат калия</string>
-    <string name="answ12">кармин</string>
-    <string name="answ13">ализарин</string>
-    <string name="answ14">индиго</string>
-    <string name="qw2">В пищевой промышленности это вещество используется в качестве консерванта Е252</string>
-    <string name="answ21">диоксид серы</string>
-    <string name="answ22">сорбат натрия</string>
-    <string name="answ23">калийная селитра</string>
-    <string name="answ24">ликопин</string>
-    <string name="qw8">Немецкий химик Фридрих Шёнбейн назвал это вещество "стреляющий хлопок" из-за взорвавшегося фартука своей супруги</string>
-    <string name="answ8">Ваш ответ:</string>
-    <string name="qw3">Это вещество было найдено немецкими учеными из института Планка в газопылевом облаке стрелец В2 и имеет характерный запах дикой малины</string>
-    <string name="answ31">метилбутриат</string>
-    <string name="answ32">этилформиат</string>
-    <string name="answ33">амилацетат</string>
-    <string name="answ34">пентилформиат</string>
-    <string name="qw10">Это вещество является добавкой Е210 и применяется в пищевой промышленности при консервировании фруктов и овощей, а также в производстве соусов, кетчупов, соков.</string>
-    <string name="qw4">Впервые это вещество в качестве отравляющего газа использовала французская армия во время Первой мировой войны в боях на реке Сомме.</string>
-    <string name="answ41">угарный газ</string>
-    <string name="answ42">хлор</string>
-    <string name="answ43">синильная кислота</string>
-    <string name="answ44">иприт</string>
-    <string name="qw5">Спектральные признаки этого вещества были обнаружены в обширном регионе звездообразования в созвездии Персея</string>
-    <string name="answ51">формальдегид</string>
-    <string name="answ52">аминоацетонитрил</string>
-    <string name="answ53">акрилонитрил</string>
-    <string name="answ54">антрацен</string>
-    <string name="qw6">Самое популярное в мире, хотя и очень горькое лекарство</string>
-    <string name="answ61">анальгин</string>
-    <string name="answ62">сульфадиметоксин</string>
-    <string name="answ63">аспирин</string>
-    <string name="answ64">фурацилин</string>
-    <string name="qw9">Данные вещества разрушают озоновый слой и провоцируют глобальное потепление</string>
-    <string name="qw7">Данное вещество играет активную роль во многих процессах организма человека, изменяя состав клеточных мембран и активность рецепторов, находящихся на этой мембране</string>
-    <string name="answ71">олеиновая кислота</string>
-    <string name="answ72">холестерин</string>
-    <string name="answ73">лауриновая кислота</string>
-    <string name="answ74">стеариновая кислота</string>
     <string name="result">Ваш результат:</string>
-    <string name="title_search">Добавки группы Е</string>
-    <string name="hint_search">Введите номер добавки (без Е)</string>
-    <string name="search">Найти</string>
     <string name="hello">Hello World, SimpleDBActivity!</string>
-    <string name="answer2field">Введите вариант ответа 2</string>
-    <string name="answer3field">Введите вариант ответа 3</string>
-    <string name="answer4field">Введите вариант ответа4</string>
-    <string name="save">Сохранить</string>
-    <string name="delete">Удалить</string>
-    <string name="cancel">Отмена</string>
-    <string name="icon">Icon</string>
-    <string name="deleteAll">Удалить все</string>
-    <string name="add">Добавить</string>
     <string name="answerfield">Введите ответ</string>
-
-
-
     <string name="exit">Выход</string>
     <string name="edit">Редактировать тест</string>
     <string name="create">Создать тест</string>
@@ -74,7 +17,6 @@
     <string name="questionfield">Введите формулировку вопроса</string>
     <string name="answer_field">Введите варианты ответа через пробел</string>
     <string name="answer_right_field">Введите верный вариант ответа</string>
-    <string name="title_field">Введите заголовок вопроса</string>
     <string name="name_field">Введите название теста</string>
     <string name="buttonAdd">Создать следующий вопрос</string>
     <string name="buttonEnd">Закончить составление теста</string>

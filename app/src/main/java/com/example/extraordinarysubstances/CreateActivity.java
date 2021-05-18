@@ -3,6 +3,7 @@ package com.example.extraordinarysubstances;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.Button;
@@ -55,13 +56,15 @@ public class CreateActivity extends AppCompatActivity {
                 etAnswer=(EditText)findViewById(R.id.answer);
                 etAnswerRight=(EditText)findViewById(R.id.answerRight);
                 etTestName=(EditText)findViewById(R.id.testName);
-                etQuestionTitle=(EditText)findViewById(R.id.questionTitle);
+
 
                 btAdd.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Question question=new Question(MyQuestionID,etQuestionText.getText().toString(),etAnswer.getText().toString(),etAnswerRight.getText().toString(), etQuestionTitle.getText().toString(), type, etTestName.getText().toString());
+                        Question question=new Question(MyQuestionID,etQuestionText.getText().toString(),etAnswer.getText().toString(),etAnswerRight.getText().toString(),  type, etTestName.getText().toString());
                         arrayList.add(question);
+
+
                     }
                 });
                 btEnd.setOnClickListener(new View.OnClickListener() {
@@ -70,7 +73,7 @@ public class CreateActivity extends AppCompatActivity {
                         for (int i=0; i<arrayList.size(); i++){
                             Question questions = arrayList.get(i);
                             DBQuestion db = new DBQuestion(CreateActivity.this);
-                            db.insert(questions.getQuestionTitle(),questions.getQuestionText(), questions.getAnswer(), questions.getAnswerRight(), questions.getType(), questions.getTestName());
+                            db.insert(questions.getQuestionText(), questions.getAnswer(), questions.getAnswerRight(), questions.getType(), questions.getTestName());
                         }
                     }
                 });
@@ -84,7 +87,6 @@ public class CreateActivity extends AppCompatActivity {
             etQuestionText.setText(question.getQuestionText());
             etAnswer.setText(question.getAnswer());
             etAnswerRight.setText(question.getAnswerRight());
-            etQuestionTitle.setText(question.getQuestionTitle());
             etTestName.setText(question.getTestName());
             MyQuestionID=question.getId();
         }

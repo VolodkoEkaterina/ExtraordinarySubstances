@@ -7,16 +7,14 @@ import java.util.ArrayList;
 
 public class Question extends AppCompatActivity implements Serializable {
     private long id;
-    private String questionTitle;
     private String questionText;
     private String answer;
     private String answerRight;
     private int type;
     private String testName;
 
-    public Question(long id, String questionTitle, String questionText, String answer, String answerRight, int type, String testName) {
+    public Question(long id, String questionText, String answer, String answerRight, int type, String testName) {
         this.id = id;
-        this.questionTitle = questionTitle;
         this.questionText = questionText;
         this.answer = answer;
         this.answerRight = answerRight;
@@ -24,8 +22,7 @@ public class Question extends AppCompatActivity implements Serializable {
         this.testName = testName;
     }
 
-    public Question(String questionTitle, String questionText, String answer, String answerRight, int type, String testName) {
-        this.questionTitle = questionTitle;
+    public Question( String questionText, String answer, String answerRight, int type, String testName) {
         this.questionText = questionText;
         this.answer = answer;
         this.answerRight = answerRight;
@@ -36,9 +33,6 @@ public class Question extends AppCompatActivity implements Serializable {
 
     public long getId() {
         return id;
-    }
-    public String getQuestionTitle() {
-        return questionTitle;
     }
     public String getQuestionText() {
         return questionText;
