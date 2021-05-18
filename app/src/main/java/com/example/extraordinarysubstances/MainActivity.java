@@ -22,15 +22,7 @@ public class MainActivity extends AppCompatActivity {
         buttonGo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,SelectTestActivity.class);//какак сделать выпадающее окно с выбором тестов?
-                startActivity(intent);
-            }
-        });
-        Button buttonEdit = (Button) findViewById(R.id.edit_btn);
-        buttonEdit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this,FourthQuestion.class);//какак сделать выпадающее окно с выбором тестов?
+                Intent intent = new Intent(MainActivity.this,SelectTestActivity.class);
                 startActivity(intent);
             }
         });
