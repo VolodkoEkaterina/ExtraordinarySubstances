@@ -1,8 +1,12 @@
 package com.example.extraordinarysubstances;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +14,8 @@ import java.util.ArrayList;
 
 public class SelectTestActivity extends AppCompatActivity {
     ListView listView;
+    private Object AdapterView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -26,5 +32,15 @@ public class SelectTestActivity extends AppCompatActivity {
         }
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, testName);
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View itemClicked, int position, long id) {
+                TextView textView = (TextView) itemClicked;
+                String textName = textView.getText().toString();
+                Intent intent= new Intent(SelectTestActivity.this, TestActivity.class);
+                intent.putExtra("testName", textName);
+                startActivity(intent);
+            }
+        });
     }
 }

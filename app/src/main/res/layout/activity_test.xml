@@ -36,6 +36,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_marginStart="250sp"
-        android:id="@+id/button"
+        android:id="@+id/buttonNext"
         android:text="@string/next" />
+
+
 </RelativeLayout>

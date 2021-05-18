@@ -18,21 +18,9 @@ public class LastActivity extends AppCompatActivity {
         Window w = getWindow();
         w.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
-        Toast.makeText(LastActivity.this, "Вы наш новый победитель! Так держать!",Toast.LENGTH_SHORT).show();
-
         txtscore = (TextView)findViewById(R.id.txtscore);
         Intent intent = getIntent();
         int score = intent.getIntExtra("score",60000);
-        if (score<400){
-            txtscore.setText("Ваш результат: " +  score + " из 1000 " + "\n Вам стоит подучить химию");
-
-        }
-        if (score>390 && score<800){
-            txtscore.setText("Ваш результат: " +  score + " из 1000 " + "\n Неплохо, вы почти знаток химии.");
-
-        }
-        if (score>790){
-            txtscore.setText("Ваш результат: " +  score + " из 1000 " + "\n Молодцы, Вы химический гений.");
-        }
+        txtscore.setText("Ваш результат: " +  score);
     }
 }

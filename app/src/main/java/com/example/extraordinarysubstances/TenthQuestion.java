@@ -33,7 +33,7 @@ public class TenthQuestion extends AppCompatActivity {
                     if (answer.equals("бензойная кислота")){
                         score+=100;
                     }
-                    Intent intent= new Intent(TenthQuestion.this, LastActivity.class);
+                    Intent intent= new Intent(TenthQuestion.this, FifthQuestion.class);
                     intent.putExtra("score", score);
                     startActivity(intent);
                 }catch (Exception e){

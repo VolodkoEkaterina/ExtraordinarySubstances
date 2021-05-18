@@ -37,6 +37,7 @@ public class DBQuestion {
         mDataBase = mOpenHelper.getWritableDatabase();
     }
 
+
     public long insert(String questionTitle, String questionText, String answer, String answerRight, int type, String testName) {
         ContentValues cv=new ContentValues();
         cv.put(COLUMN_QUESTIONTITLE, questionTitle);
