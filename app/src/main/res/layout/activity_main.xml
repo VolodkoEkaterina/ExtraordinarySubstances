@@ -38,10 +38,18 @@
         android:layout_marginHorizontal="100sp"
         android:text="@string/create"/>
     <Button
-        android:id="@+id/exit_btn"
+        android:id="@+id/game_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/create_btn"
+        android:layout_marginTop="20sp"
+        android:layout_marginHorizontal="100sp"
+        android:text="@string/gane_btn"/>
+    <Button
+        android:id="@+id/exit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/game_btn"
         android:layout_marginTop="20sp"
         android:layout_marginHorizontal="100sp"
         android:text="@string/exit"/>

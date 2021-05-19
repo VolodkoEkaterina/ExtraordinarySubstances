@@ -34,6 +34,14 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+        Button buttonGame = (Button) findViewById(R.id.game_btn);
+        buttonGame.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, StartActivity.class);
+                startActivity(intent);
+            }
+        });
         Button buttonExit = (Button) findViewById(R.id.exit_btn);
         buttonExit.setOnClickListener(new View.OnClickListener() {
             @Override

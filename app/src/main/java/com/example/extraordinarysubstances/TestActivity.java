@@ -39,6 +39,8 @@ public class TestActivity extends AppCompatActivity {
         questions = db.selectTest(textName);
         fillFragment(questions.get(0));
         Button buttonNext=(Button)findViewById(R.id.buttonNext);
+        TextView Title = findViewById(R.id.title);
+        Title.setText(textName);
         buttonNext.setOnClickListener(new View.OnClickListener(){
             public void onClick(View v) {
                 if (questions.get(number).getType() == 0) {
