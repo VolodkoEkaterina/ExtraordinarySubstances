@@ -3,6 +3,13 @@
     android:layout_width="fill_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical">
+    <ImageView
+        android:id="@+id/main_background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        android:scaleType="centerCrop"
+        android:src="@drawable/main_background" />
 
     <ListView
         android:layout_marginTop="10sp"

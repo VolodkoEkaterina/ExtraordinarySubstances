@@ -15,8 +15,6 @@
         android:scaleType="centerCrop"
         android:src="@drawable/main_background" />
 
-
-
     <TextView
         android:id="@+id/txtscore"
         android:layout_width="wrap_content"
@@ -26,5 +24,20 @@
         android:textSize="45sp"
         android:textStyle="bold"
         android:gravity="center"
-        android:layout_centerInParent="true"/>
+        android:layout_marginHorizontal="100sp"
+        android:layout_marginTop="60sp"/>
+
+    <TextView
+        android:id="@+id/test_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="@color/white"
+        android:text="TextView"
+        android:textSize="45sp"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:layout_marginHorizontal="100sp"
+        android:layout_below="@+id/txtscore"
+        android:layout_marginTop="20sp"/>
+
 </RelativeLayout>

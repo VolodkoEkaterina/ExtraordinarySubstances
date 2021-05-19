@@ -39,12 +39,77 @@
         android:id="@+id/frame_layout"
         android:layout_width="match_parent"
         android:layout_height="377sp"
-        android:layout_below="@+id/spinner"
+        android:layout_below="@+id/container2"
         android:layout_alignParentBottom="true"
         android:layout_marginTop="20sp"
         android:layout_marginBottom="200sp">
     </FrameLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20sp"
+        android:gravity="center"
+        android:layout_below="@+id/spinner"
+        android:id="@+id/container1">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:text="@string/name_field"/>
+
+            <EditText
+                android:id="@+id/testName"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/teal_200"/>
+            <requestFocus />
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/container2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="20sp"
+        android:gravity="center"
+        android:layout_below="@+id/container1">
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:textColor="@color/white"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:text="@string/test_comment"/>
+
+            <EditText
+                android:id="@+id/test_comment"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:textSize="15sp"
+                android:textColor="@color/white"
+                android:backgroundTint="@color/teal_200"/>
+            <requestFocus />
+        </LinearLayout>
+    </LinearLayout>
 
     <LinearLayout
         android:id="@+id/buttons"

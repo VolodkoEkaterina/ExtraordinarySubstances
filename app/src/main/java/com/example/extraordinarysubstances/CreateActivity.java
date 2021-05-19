@@ -20,7 +20,7 @@ import java.util.ArrayList;
 
 public class CreateActivity extends AppCompatActivity {
     private Button btAdd,btEnd;
-    private EditText etTestName, etQuestionTitle, etQuestionText,etAnswer,etAnswerRight;
+    private EditText etTestName, etQuestionText,etAnswer,etAnswerRight, etTestComment, etPoints;
     private Context context;
     private long MyQuestionID;
     public int selected;
@@ -52,6 +52,8 @@ public class CreateActivity extends AppCompatActivity {
 
                 btAdd=(Button)findViewById(R.id.butAdd);
                 btEnd=(Button)findViewById(R.id.butEnd);
+                etPoints=(EditText)findViewById(R.id.points);
+                etTestComment = (EditText)findViewById(R.id.test_comment);
                 etQuestionText=(EditText)findViewById(R.id.questionText);
                 etAnswer=(EditText)findViewById(R.id.answer);
                 etAnswerRight=(EditText)findViewById(R.id.answerRight);
@@ -61,7 +63,7 @@ public class CreateActivity extends AppCompatActivity {
                 btAdd.setOnClickListener(new View.OnClickListener() {
                     @Override
                     public void onClick(View v) {
-                        Question question=new Question(MyQuestionID,etQuestionText.getText().toString(),etAnswer.getText().toString(),etAnswerRight.getText().toString(),  type, etTestName.getText().toString());
+                        Question question=new Question(MyQuestionID,etQuestionText.getText().toString(),etAnswer.getText().toString(),etAnswerRight.getText().toString(),  type, etTestName.getText().toString(), etTestComment.getText().toString(), etPoints.getText().toInt());
                         arrayList.add(question);
 
 
@@ -73,7 +75,7 @@ public class CreateActivity extends AppCompatActivity {
                         for (int i=0; i<arrayList.size(); i++){
                             Question questions = arrayList.get(i);
                             DBQuestion db = new DBQuestion(CreateActivity.this);
-                            db.insert(questions.getQuestionText(), questions.getAnswer(), questions.getAnswerRight(), questions.getType(), questions.getTestName());
+                            db.insert(questions.getQuestionText(), questions.getAnswer(), questions.getAnswerRight(), questions.getType(), questions.getTestName(), questions.getTestComment(), questions.getPoints());
                         }
                     }
                 });
@@ -88,6 +90,7 @@ public class CreateActivity extends AppCompatActivity {
             etAnswer.setText(question.getAnswer());
             etAnswerRight.setText(question.getAnswerRight());
             etTestName.setText(question.getTestName());
+            etTestComment.setText(question.getTestComment());
             MyQuestionID=question.getId();
         }
         else
