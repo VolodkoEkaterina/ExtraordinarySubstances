@@ -45,7 +45,7 @@
     <string name="result">Ваш результат:</string>
     <string name="hello">Hello World, SimpleDBActivity!</string>
     <string name="answerfield">Введите ответ</string>
-    <string name="exit">Выход</string>
+    <string name="exit">Выйти</string>
     <string name="edit">Редактировать тест</string>
     <string name="create">Создать тест</string>
     <string name="go">Пройти тест</string>
@@ -66,7 +66,16 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="gane_btn">Тест Фактор вещества</string>
+    <string name="game_btn">Игра "Фактор вещества"</string>
+    <string name="game1_btn">Игра "Выбери самую сильную кислоту"</string>
     <string name="test_comment">Введите дополнительную информацию для изучения по теме теста</string>
     <string name="points">Введите количество очков за верный ответ на вопрос</string>
+    <string name="back">Назад</string>
+    <string name="game_title">Игра: "Выбери самую сильную кислоту"</string>
+    <string name="textdescription"> Выберите формулу самой сильной кислоты.\nВопросы могут повторяться, пока вы не наберете 10 очков.\nУдачи! </string>
+    <string name="text_continue">Продолжить </string>
+    <string name="game1">Выбери самую сильную кислоту </string>
+    <string name="textdescriptionEnd">"Поздравляем, игра пройдена!\nА знали ли вы, что cерная кислота потребляется человечеством активнее, чем любая другая?\nОна задействована в десятках областей промышленности, от металлургии до производства высокоточной электроники."</string>
+
+
 </resources>

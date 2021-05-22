@@ -40,7 +40,7 @@
                         android:text="@string/questionfield"/>
 
                     <EditText
-                        android:id="@+id/questionText"
+                        android:id="@+id/questionText_editText"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
@@ -70,7 +70,7 @@
                         android:text="@string/answer_right_field"/>
 
                     <EditText
-                        android:id="@+id/answerRight"
+                        android:id="@+id/answerRight_editText"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"
@@ -100,7 +100,7 @@
                         android:text="@string/points"/>
 
                     <EditText
-                        android:id="@+id/points"
+                        android:id="@+id/points_editText"
                         android:layout_width="fill_parent"
                         android:layout_height="wrap_content"
                         android:inputType="text"

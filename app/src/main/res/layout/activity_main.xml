@@ -44,12 +44,20 @@
         android:layout_below="@+id/create_btn"
         android:layout_marginTop="20sp"
         android:layout_marginHorizontal="100sp"
-        android:text="@string/gane_btn"/>
+        android:text="@string/game_btn"/>
+    <Button
+        android:id="@+id/game1_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/game_btn"
+        android:layout_marginTop="20sp"
+        android:layout_marginHorizontal="100sp"
+        android:text="@string/game1_btn"/>
     <Button
         android:id="@+id/exit_btn"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/game_btn"
+        android:layout_below="@+id/game1_btn"
         android:layout_marginTop="20sp"
         android:layout_marginHorizontal="100sp"
         android:text="@string/exit"/>

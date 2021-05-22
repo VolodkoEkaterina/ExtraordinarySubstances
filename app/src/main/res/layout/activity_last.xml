@@ -40,4 +40,22 @@
         android:layout_below="@+id/txtscore"
         android:layout_marginTop="20sp"/>
 
+    <LinearLayout
+        android:id="@+id/startLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="130dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:orientation="horizontal"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/buttonStart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/exit"
+            android:textSize="34sp" />
+    </LinearLayout>
+
 </RelativeLayout>

@@ -22,5 +22,6 @@ public class LastActivity extends AppCompatActivity {
         Intent intent = getIntent();
         int score = intent.getIntExtra("score",60000);
         txtscore.setText("Ваш результат: " +  score );
+
     }
 }
