@@ -8,25 +8,22 @@ public class Question extends AppCompatActivity implements Serializable {
     private String answerRight;
     private int type;
     private String testName;
-    private String testComment;
     private int points;
-    public Question(long id, String questionText, String answer, String answerRight, int type, String testName, String testComment, int points) {
+    public Question(long id, String questionText, String answer, String answerRight, int type, String testName, int points) {
         this.id = id;
         this.questionText = questionText;
         this.answer = answer;
         this.answerRight = answerRight;
         this.type = type;
         this.testName = testName;
-        this.testComment = testComment;
         this.points = points;
     }
-    public Question( String questionText, String answer, String answerRight, int type, String testName, String testComment, int points) {
+    public Question( String questionText, String answer, String answerRight, int type, String testName, int points) {
         this.questionText = questionText;
         this.answer = answer;
         this.answerRight = answerRight;
         this.type = type;
         this.testName = testName;
-        this.testComment = testComment;
         this.points = points;
     }
     public long getId() { return id; }
@@ -35,6 +32,5 @@ public class Question extends AppCompatActivity implements Serializable {
     public String getAnswerRight() { return answerRight; }
     public int getType() { return type; }
     public String getTestName() { return testName; }
-    public String getTestComment() { return testComment; }
     public int getPoints() { return points; }
 }

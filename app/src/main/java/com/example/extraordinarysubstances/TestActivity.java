@@ -4,11 +4,11 @@ import android.content.Intent;
 
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.View;
 
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
@@ -27,14 +27,19 @@ public class TestActivity extends AppCompatActivity {
     String textName = null;
     int number=0;
     int score=0;
+    int c = 0;
+    int p =0;
     ArrayList<Question> questions;
-
+    ArrayList<Integer> wrongList;
+    TextView questionText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setContentView(R.layout.activity_test);
         Intent intent = getIntent();
         textName = intent.getStringExtra("testName");
-        setContentView(R.layout.activity_select_test);
+
         DBQuestion db = new DBQuestion(this);
         questions = db.selectTest(textName);
         fillFragment(questions.get(0));
@@ -48,14 +53,21 @@ public class TestActivity extends AppCompatActivity {
                     int checkedRadioButtonId = radioGroup.getCheckedRadioButtonId();
                     RadioButton Answer = findViewById(checkedRadioButtonId);
                     if (Answer.getText().equals(questions.get(number).getAnswerRight())) {
-                        score += 1;
+                        score = score+p;
+
+                    }else{
+                        wrongList = new ArrayList<>();
+                        wrongList.add(number);
                     }
 
                 } else if (questions.get(number).getType() == 1) {
                     EditText answerText = findViewById(R.id.questionAnswer);
                     String answer = answerText.getText().toString();
                     if (answer.equals(questions.get(number).getAnswerRight())) {
-                        score += 1;
+                        score = score + p;
+                    }else{
+                        wrongList = new ArrayList<>();
+                        wrongList.add(number);
                     }
                 }
                 number += 1;
@@ -64,6 +76,8 @@ public class TestActivity extends AppCompatActivity {
                 } else {
                     Intent intent = new Intent(TestActivity.this, LastActivity.class);
                     intent.putExtra("score", score);
+                    intent.putExtra("wrong", wrongList);
+                    intent.putExtra("point", c);
                     startActivity(intent);
                 }
             }
@@ -77,8 +91,10 @@ public class TestActivity extends AppCompatActivity {
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.frame_layout, fragment);
             ft.commit();
-            TextView QuestionText =  findViewById(R.id.questionText);
-            QuestionText.setText(question.getQuestionText());
+
+            questionText =  findViewById(R.id.questionText);
+            questionText.setText(question.getQuestionText());
+            Log.d("My",questionText + "  ");
             RadioButton Answer1 = findViewById(R.id.answ1);
             RadioButton Answer2 = findViewById(R.id.answ2);
             RadioButton Answer3 = findViewById(R.id.answ3);
@@ -89,6 +105,8 @@ public class TestActivity extends AppCompatActivity {
             Answer2.setText(answers[1]);
             Answer3.setText(answers[2]);
             Answer4.setText(answers[3]);
+            p = question.getPoints();
+            c= c+p;
 
         }
         else if (question.getType()==1){
@@ -97,10 +115,12 @@ public class TestActivity extends AppCompatActivity {
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.frame_layout, fragment);
             ft.commit();
-            TextView QuestionText =  findViewById(R.id.questionText);
-            QuestionText.setText(question.getQuestionText());
+            questionText =  findViewById(R.id.question_Text);
+            questionText.setText(question.getQuestionText());
             EditText answerText = findViewById(R.id.questionAnswer);
             String answer = answerText.getText().toString();
+            p = question.getPoints();
+            c= c+p;
         }
     }
 }

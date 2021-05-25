@@ -26,7 +26,7 @@ public class SelectTestActivity extends AppCompatActivity {
                 testName.add(questions.get(i).getTestName());
             }
         }
-
+        testName.remove(null);
         Log.d("My", questions.toString());
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, testName);
         listView.setAdapter(adapter);

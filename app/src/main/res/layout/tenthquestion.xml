@@ -15,7 +15,7 @@
 
 
     <TextView
-        android:id="@+id/questionText1"
+        android:id="@+id/questionText10"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/qw10"

@@ -2,8 +2,10 @@ package com.example.extraordinarysubstances;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,7 +23,18 @@ public class LastActivity extends AppCompatActivity {
         txtscore = (TextView)findViewById(R.id.txtscore);
         Intent intent = getIntent();
         int score = intent.getIntExtra("score",60000);
-        txtscore.setText("Ваш результат: " +  score );
+        int c = intent.getIntExtra("point",60000);
+        txtscore.setText("Ваш результат: " +  score + "из " + c );
+
+
+        Button buttonEnd = (Button) findViewById(R.id.buttonEnd);
+        buttonEnd.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(LastActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
 
     }
 }

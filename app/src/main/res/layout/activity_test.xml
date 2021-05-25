@@ -21,7 +21,7 @@
         android:layout_marginTop="50sp"/>
 
     <FrameLayout
-        android:id="@+id/frame_layout_create"
+        android:id="@+id/frame_layout"
         android:layout_width="match_parent"
         android:layout_height="300sp"
         android:layout_marginBottom="200dp"

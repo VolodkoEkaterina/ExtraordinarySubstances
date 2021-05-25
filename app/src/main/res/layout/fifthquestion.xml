@@ -14,7 +14,7 @@
         android:src="@drawable/main_background" />
 
     <TextView
-        android:id="@+id/questionText7"
+        android:id="@+id/questionText5"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/qw5"

@@ -2,6 +2,7 @@ package com.example.extraordinarysubstances;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
         buttonGame.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, StartActivity.class);
+                Intent intent = new Intent(MainActivity.this, FirstQuestion.class);
                 startActivity(intent);
             }
         });

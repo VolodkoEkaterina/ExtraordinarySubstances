@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 public class DBQuestion {
     private static final String DATABASE_NAME = "simple.db";
-    private static final int DATABASE_VERSION = 4;
+    private static final int DATABASE_VERSION = 6;
     private static final String TABLE_NAME = "tableQuestions";
 
     private static final String COLUMN_ID = "id";
@@ -19,7 +19,6 @@ public class DBQuestion {
     private static final String COLUMN_ANSWERRIGHT = "AnswerRight";
     private static final String COLUMN_TYPE = "Type";
     private static final String COLUMN_TESTNAME = "TestName";
-    private static final String COLUMN_TESTCOMMENT = "TestComment";
     private static final String COLUMN_POINTS = "Points";
 
 
@@ -29,8 +28,7 @@ public class DBQuestion {
     private static final int NUM_COLUMN_ANSWERRIGHT = 3;
     private static final int NUM_COLUMN_TYPE = 4;
     private static final int NUM_COLUMN_TESTNAME = 5;
-    private static final int NUM_COLUMN_TESTCOMMENT = 6;
-    private static final int NUM_COLUMN_POINTS = 7;
+    private static final int NUM_COLUMN_POINTS = 6;
 
     private SQLiteDatabase mDataBase;
 
@@ -40,14 +38,13 @@ public class DBQuestion {
     }
 
 
-    public long insert( String questionText, String answer, String answerRight, int type, String testName, String testComment, int points) {
+    public long insert( String questionText, String answer, String answerRight, int type, String testName, int points) {
         ContentValues cv=new ContentValues();
         cv.put(COLUMN_QUESTIONTEXT, questionText);
         cv.put(COLUMN_ANSWER, answer);
         cv.put(COLUMN_ANSWERRIGHT, answerRight);
         cv.put(COLUMN_TYPE,type);
         cv.put(COLUMN_TESTNAME,testName);
-        cv.put(COLUMN_TESTCOMMENT,testComment);
         cv.put(COLUMN_POINTS,points);
         return mDataBase.insert(TABLE_NAME, null, cv);
     }
@@ -59,7 +56,6 @@ public class DBQuestion {
         cv.put(COLUMN_ANSWERRIGHT, md.getAnswerRight());
         cv.put(COLUMN_TYPE,md.getType());
         cv.put(COLUMN_TESTNAME, md.getTestName());
-        cv.put(COLUMN_TESTCOMMENT,md.getTestComment());
         cv.put(COLUMN_POINTS,md.getPoints());
 
         return mDataBase.update(TABLE_NAME, cv, COLUMN_ID + " = ?",new String[] { String.valueOf(md.getId())});
@@ -82,10 +78,9 @@ public class DBQuestion {
         String AnswerRight = mCursor.getString(NUM_COLUMN_ANSWERRIGHT);
         int Type = mCursor.getInt(NUM_COLUMN_TYPE);
         String TestName = mCursor.getString(NUM_COLUMN_TESTNAME);
-        String TestComment = mCursor.getString(NUM_COLUMN_TESTCOMMENT);
         int Points = mCursor.getInt(NUM_COLUMN_POINTS);
 
-        return new Question(id, QuestionText, Answer, AnswerRight, Type, TestName, TestComment, Points);
+        return new Question(id, QuestionText, Answer, AnswerRight, Type, TestName, Points);
     }
     public ArrayList<Question> selectTest(String testName) {
         Cursor mCursor = mDataBase.query(TABLE_NAME, null, COLUMN_TESTNAME + " = ?", new String[]{String.valueOf(testName)}, null, null, null);
@@ -96,9 +91,8 @@ public class DBQuestion {
         String AnswerRight = mCursor.getString(NUM_COLUMN_ANSWERRIGHT);
         int Type = mCursor.getInt(NUM_COLUMN_TYPE);
         String TestName = mCursor.getString(NUM_COLUMN_TESTNAME);
-        String TestComment = mCursor.getString(NUM_COLUMN_TESTCOMMENT);
         int Points = mCursor.getInt(NUM_COLUMN_POINTS);
-        questions.add(new Question(QuestionText, Answer, AnswerRight, Type, TestName, TestComment, Points));
+        questions.add(new Question(QuestionText, Answer, AnswerRight, Type, TestName, Points));
         }while (mCursor.moveToNext());
 
         return questions;
@@ -117,9 +111,8 @@ public class DBQuestion {
                 String AnswerRight = mCursor.getString(NUM_COLUMN_ANSWERRIGHT);
                 int Type = mCursor.getInt(NUM_COLUMN_TYPE);
                 String TestName = mCursor.getString(NUM_COLUMN_TESTNAME);
-                String TestComment = mCursor.getString(NUM_COLUMN_TESTCOMMENT);
                 int Points = mCursor.getInt(NUM_COLUMN_POINTS);
-                arr.add(new Question(id, QuestionText, Answer, AnswerRight, Type, TestName, TestComment, Points));
+                arr.add(new Question(id, QuestionText, Answer, AnswerRight, Type, TestName, Points));
             } while (mCursor.moveToNext());
         }
         return arr;
@@ -138,7 +131,6 @@ public class DBQuestion {
                     COLUMN_ANSWERRIGHT + " TEXT, " +
                     COLUMN_TYPE + " INT, " +
                     COLUMN_TESTNAME + " TEXT, " +
-                    COLUMN_TESTCOMMENT + "TEXT, " +
                     COLUMN_POINTS + " INT); " ;
             db.execSQL(query);
         }
