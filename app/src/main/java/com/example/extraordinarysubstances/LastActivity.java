@@ -11,6 +11,8 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import java.util.ArrayList;
+
 public class LastActivity extends AppCompatActivity {
     TextView txtscore;
     @Override
@@ -24,8 +26,7 @@ public class LastActivity extends AppCompatActivity {
         Intent intent = getIntent();
         int score = intent.getIntExtra("score",60000);
         int c = intent.getIntExtra("point",60000);
-        txtscore.setText("Ваш результат: " +  score + "из " + c );
-
+        txtscore.setText("Ваш результат: " + score + " из " + c );
 
         Button buttonEnd = (Button) findViewById(R.id.buttonEnd);
         buttonEnd.setOnClickListener(new View.OnClickListener() {

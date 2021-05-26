@@ -54,7 +54,7 @@
         android:layout_marginHorizontal="100sp"
         android:text="@string/game1_btn"/>
     <Button
-        android:id="@+id/exit_btn"
+        android:id="@+id/exit_btn1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/game1_btn"

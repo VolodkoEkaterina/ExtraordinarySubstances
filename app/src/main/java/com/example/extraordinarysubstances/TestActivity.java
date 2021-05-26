@@ -4,6 +4,8 @@ import android.content.Intent;
 
 import android.os.Bundle;
 
+import android.os.Handler;
+import android.os.Looper;
 import android.util.Log;
 import android.view.View;
 
@@ -32,11 +34,13 @@ public class TestActivity extends AppCompatActivity {
     ArrayList<Question> questions;
     ArrayList<Integer> wrongList;
     TextView questionText;
+    Handler handler;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_test);
+        handler = new Handler(Looper.getMainLooper());
         Intent intent = getIntent();
         textName = intent.getStringExtra("testName");
 
@@ -66,8 +70,6 @@ public class TestActivity extends AppCompatActivity {
                     if (answer.equals(questions.get(number).getAnswerRight())) {
                         score = score + p;
                     }else{
-                        wrongList = new ArrayList<>();
-                        wrongList.add(number);
                     }
                 }
                 number += 1;
@@ -76,7 +78,6 @@ public class TestActivity extends AppCompatActivity {
                 } else {
                     Intent intent = new Intent(TestActivity.this, LastActivity.class);
                     intent.putExtra("score", score);
-                    intent.putExtra("wrong", wrongList);
                     intent.putExtra("point", c);
                     startActivity(intent);
                 }
@@ -91,20 +92,34 @@ public class TestActivity extends AppCompatActivity {
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.frame_layout, fragment);
             ft.commit();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try{
+                        Thread.sleep(1000);
+                    }catch (InterruptedException e){
+                        e.printStackTrace();
+                    }
+                    handler.post(new Runnable(){
+                        @Override
+                        public void run(){
+                            questionText =  findViewById(R.id.questionText);
+                            questionText.setText(question.getQuestionText());
+                            RadioButton Answer1 = findViewById(R.id.answ1);
+                            RadioButton Answer2 = findViewById(R.id.answ2);
+                            RadioButton Answer3 = findViewById(R.id.answ3);
+                            RadioButton Answer4 = findViewById(R.id.answ4);
+                            String answer = question.getAnswer();
+                            String[] answers = answer.split(" ");
+                            Answer1.setText(answers[0]);
+                            Answer2.setText(answers[1]);
+                            Answer3.setText(answers[2]);
+                            Answer4.setText(answers[3]);
+                        }
 
-            questionText =  findViewById(R.id.questionText);
-            questionText.setText(question.getQuestionText());
-            Log.d("My",questionText + "  ");
-            RadioButton Answer1 = findViewById(R.id.answ1);
-            RadioButton Answer2 = findViewById(R.id.answ2);
-            RadioButton Answer3 = findViewById(R.id.answ3);
-            RadioButton Answer4 = findViewById(R.id.answ4);
-            String answer = question.getAnswer();
-            String[] answers = answer.split(" ");
-            Answer1.setText(answers[0]);
-            Answer2.setText(answers[1]);
-            Answer3.setText(answers[2]);
-            Answer4.setText(answers[3]);
+                    });
+                }
+            }).start();
             p = question.getPoints();
             c= c+p;
 
@@ -115,10 +130,26 @@ public class TestActivity extends AppCompatActivity {
             FragmentTransaction ft = fm.beginTransaction();
             ft.replace(R.id.frame_layout, fragment);
             ft.commit();
-            questionText =  findViewById(R.id.question_Text);
-            questionText.setText(question.getQuestionText());
-            EditText answerText = findViewById(R.id.questionAnswer);
-            String answer = answerText.getText().toString();
+            new Thread(new Runnable() {
+                @Override
+                public void run() {
+                    try{
+                        Thread.sleep(1000);
+                    }catch (InterruptedException e){
+                        e.printStackTrace();
+                    }
+                    handler.post(new Runnable(){
+                        @Override
+                        public void run(){
+                            questionText =  findViewById(R.id.question_Text);
+                            questionText.setText(question.getQuestionText());
+                            EditText answerText = findViewById(R.id.questionAnswer);
+                            String answer = answerText.getText().toString();
+                        }
+
+                    });
+                }
+            }).start();
             p = question.getPoints();
             c= c+p;
         }

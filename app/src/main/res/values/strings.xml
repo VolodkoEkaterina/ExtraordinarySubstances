@@ -49,7 +49,7 @@
     <string name="edit">Редактировать тест</string>
     <string name="create">Создать тест</string>
     <string name="go">Пройти тест</string>
-    <string name="title_app">Создай тест сам</string>
+    <string name="title_app">Прокачай свой уровень химии</string>
     <string name="title_create">Выберите тип вопроса</string>
     <string-array name="question_type">
         <item>Вопрос с выбором одного варианта ответа </item>

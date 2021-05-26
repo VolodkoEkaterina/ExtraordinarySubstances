@@ -21,24 +21,14 @@
         android:layout_height="wrap_content"
         android:textColor="@color/white"
         android:text="TextView"
-        android:textSize="45sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         android:gravity="center"
-        android:layout_marginHorizontal="100sp"
-        android:layout_marginTop="60sp"/>
+        android:layout_marginHorizontal="50sp"
+        android:layout_marginTop="60sp"
+        android:layout_centerInParent="true"/>
 
-    <TextView
-        android:id="@+id/test_comment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:text="TextView"
-        android:textSize="45sp"
-        android:textStyle="bold"
-        android:gravity="center"
-        android:layout_marginHorizontal="100sp"
-        android:layout_below="@+id/txtscore"
-        android:layout_marginTop="20sp"/>
+
 
     <LinearLayout
         android:id="@+id/startLayout"
@@ -55,7 +45,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="@string/exit"
-            android:textSize="34sp" />
+            android:textSize="20sp" />
     </LinearLayout>
 
 </RelativeLayout>
